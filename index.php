@@ -24,15 +24,15 @@
             <div class="w3-half w3-container">
                 <table class="w3-table-all">
                     <thead>
-                        <th>Ссылка</th>
                         <th>Арт. №</th>
+                        <th>Ссылка</th>
                     </thead>
                     <tbody>
                         <?php
                             foreach ($out as $url => $item) { ?>
                                 <tr>
-                                    <td><a href="https://www.youtube.com/watch?v=<?=$url?>" target="_blank">https://www.youtube.com/watch?v=<?=$url?></a></td>
                                     <td><?=$item?></td>
+                                    <td><a href="https://www.youtube.com/watch?v=<?=$url?>" target="_blank">https://www.youtube.com/watch?v=<?=$url?></a></td>
                                 </tr>
                             <?php } ?>
                     </tbody>
