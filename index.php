@@ -2,13 +2,16 @@
 
     $youtube = new Youtube();
     $res = $youtube->getVideosbyChannelId('UCndOFkIsRNaO0JyzxFwyR1w');
+
+    echo '<pre>';
+    print_r($res);
+    echo '</pre>';
+
     foreach ($res->items as $video) {
         preg_match('/[\d]{5,7}/', $video->snippet->description, $matches);
         $out[$video->id->videoId] = $matches[0];
     }
 
-//    echo '<pre>';
-//    print_r($out);
 ?>
 
 
