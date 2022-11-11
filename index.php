@@ -1,19 +1,14 @@
 <?php
+    error_reporting(0);
 
     $youtube = new Youtube();
     $res = $youtube->getVideosbyChannelId('UCndOFkIsRNaO0JyzxFwyR1w');
-
-    echo '<pre>';
-    print_r($res);
-    echo '</pre>';
 
     foreach ($res->items as $video) {
         preg_match('/[\d]{5,7}/', $video->snippet->description, $matches);
         $out[$video->id->videoId] = $matches[0];
     }
-
 ?>
-
 
     <!DOCTYPE html>
     <html lang="ru">
@@ -25,29 +20,28 @@
         <link rel="stylesheet" href="//www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>
-    <div class="w3-row">
-        <div class="w3-half w3-container">
-            <table class="w3-table-all">
-                <thead>
-                    <th>Ссылка</th>
-                    <th>Арт. №</th>
-                </thead>
-                <tbody>
-                    <?php
-                        foreach ($out as $url => $item) { ?>
-                            <tr>
-                                <td><a href="https://www.youtube.com/watch?v=<?=$url?>" target="_blank">https://www.youtube.com/watch?v=<?=$url?></a></td>
-                                <td><?=$item?></td>
-                            </tr>
-                        <?php } ?>
-                </tbody>
-            </table>
+        <div class="w3-row">
+            <div class="w3-half w3-container">
+                <table class="w3-table-all">
+                    <thead>
+                        <th>Ссылка</th>
+                        <th>Арт. №</th>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach ($out as $url => $item) { ?>
+                                <tr>
+                                    <td><a href="https://www.youtube.com/watch?v=<?=$url?>" target="_blank">https://www.youtube.com/watch?v=<?=$url?></a></td>
+                                    <td><?=$item?></td>
+                                </tr>
+                            <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-
-
     </body>
 </html>
+
 
 
 <?php
