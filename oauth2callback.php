@@ -6,7 +6,7 @@
 
     $client = new Google_Client();
     $client->setAuthConfigFile('/gluck-demo.json');
-echo 'èç ñêðèïòà: http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php'.PHP_EOL;
+echo 'Ð¸Ð· ÑÐºÑ€Ð¸Ð¿Ñ‚Ð°: http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php'.PHP_EOL;
     $client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php');
     $client->setScopes([
         'https://www.googleapis.com/auth/youtube.upload',
