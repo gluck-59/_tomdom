@@ -1,12 +1,12 @@
 <?php
-    echo __FILE__;
+//    echo __FILE__;
     require_once __DIR__.'/vendor/autoload.php';
 
     session_start();
 
     $client = new Google_Client();
-    $client->setAuthConfigFile('/Users/gluck/Sites/Helga.ru/config/gluck-demo.json');
-echo 'http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php';
+    $client->setAuthConfigFile('/gluck-demo.json');
+echo 'из скрипта: http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php'.PHP_EOL;
     $client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php');
     $client->setScopes([
         'https://www.googleapis.com/auth/youtube.upload',
