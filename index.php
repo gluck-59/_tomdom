@@ -5,9 +5,10 @@
     $res = $youtube->getVideosbyChannelId('UCndOFkIsRNaO0JyzxFwyR1w');
 
     foreach ($res->items as $video) {
-        preg_match('/[\d]{5,7}/', $video->snippet->description, $matches);
+        preg_match('/[\d]{4,8}/', $video->snippet->description, $matches);
         $out[$video->id->videoId] = $matches[0];
     }
+
 ?>
 
     <!DOCTYPE html>
