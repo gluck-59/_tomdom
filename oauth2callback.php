@@ -9,7 +9,7 @@
 echo 'http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php';
     $client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php');
     $client->setScopes([
-        'https://www.googleapis.com/auth/youtube.readonly',
+        'https://www.googleapis.com/auth/youtube.upload',
     ]);
     $client->setApprovalPrompt('force');
     $client->setAccessType("offline");
